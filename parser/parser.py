@@ -38,7 +38,7 @@ for k in range(len(tr_arr)):
     t_v = t_r.json()["verses"]
     psv = ""
     for j in range(len(t_v)):
-      psv += "{}\n".format(re.sub(re.compile("<[^<]+?>\d*"), " ", t_v[j]["translations"][0]["text"]).replace("\r\n", "").replace("\xa0",""))
+      psv += "{}\n".format(re.sub(re.compile('\\n\s+'), " ", re.sub(re.compile("<[^<]+?>\d*"), " ", t_v[j]["translations"][0]["text"]).replace("\r\n", "").replace("\xa0","")))
     f = open("../quran/{}/{}.psv".format(str(tr_arr[k]["id"]), str(i+1)), "w", encoding="utf-8")
     f.write(psv)
     f.close()
