@@ -42,10 +42,12 @@ for k in range(len(tr_arr)):
     f = open("../quran/{}/{}.psv".format(str(tr_arr[k]["id"]), str(i+1)), "w", encoding="utf-8")
     f.write(psv)
     f.close()
-  sleep(10)
+  sleep(5)
 
+
+dTS = ""
 for i in tqdm(range(len(ch_inf))):
-  dTS = "Surah {} ({} - {})\n".format(ch_inf[i]["name_simple"], ch_inf[i]["name_arabic"], ch_inf[i]["translated_name"]["name"])
-  f = open("../quran/chapters.txt", "w", encoding="utf-8")
-  f.write(dTS)
-  f.close()
+  dTS += "Surah {} ({} - {})\n".format(ch_inf[i]["name_simple"], ch_inf[i]["name_arabic"], ch_inf[i]["translated_name"]["name"])
+f = open("../quran/chapters.txt", "w", encoding="utf-8")
+f.write(dTS)
+f.close()
