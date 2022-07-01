@@ -15,7 +15,7 @@ jobs:
         python -m pip install tqdm requests
         cd parser && python parser.py && cd ../
     - name: "Tar files"
-      run: tar -cvf eQitab_data.tar ./**/*.txt ./**/**/*.psv
+      run: tar -cvf eQitab_data.tar **/*.txt **/**/*.psv
     - name: "Upload tar file"
       uses: actions/upload-artifact@v3
       with:
