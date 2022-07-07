@@ -1,6 +1,4 @@
-on: 
-  schedule:
-    - cron: "0 0 * * 5"
+on: push
 jobs:
   update_db:
     name: "Database Updater"
