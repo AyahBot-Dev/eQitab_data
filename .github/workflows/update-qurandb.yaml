@@ -13,7 +13,7 @@ jobs:
     - name: "Fetch data"
       run: |
         python -m pip install tqdm requests
-        cd parser && python parser.py && cd ../
+        cd parser && python parse_quran.py && cd ../
     - name: "Tar files"
       run: tar -cvf eQitab_data.tar **/*.txt **/**/*.psv
     - name: "Upload tar file"
